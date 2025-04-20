@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: url('/static/images/chatbot_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-card {
+    background-color: rgba(1, 68, 33, 0.95);
+    width: 95%;
+    max-width: 1200px;
+    padding: 2.5rem;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: white;
+    backdrop-filter: blur(6px);
+    animation: fadeIn 0.7s ease-in;
+}
+
+.chat-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #d4f5d0;
+}
+
+.bot-image {
+    display: flex;
+    justify-content: center;
+}
+
+.bot-gif {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #a3d9a5;
+    transition: transform 0.3s ease;
+}
+
+.bot-gif:hover {
+    transform: scale(1.1);
+}
+
+.chat-box {
+    height: 500px;
+    overflow-y: auto;
+    padding: 1rem;
+    background: #ecffe6;
+    border: 1px solid #c5e6cb;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    scroll-behavior: smooth;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.user, .bot {
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+
+.user {
+    align-self: flex-end;
+    background-color: #bdf3ec;
+    color: #025959;
+    text-align: right;
+}
+
+.bot {
+    align-self: flex-start;
+    background-color: #dafadf;
+    color: #014421;
+    text-align: left;
+}
+
+.input-area {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.input-area button {
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.input-area button:hover {
+    background-color: #21867a;
+    transform: scale(1.05);
+}
+
+a {
+    color: #a8ffd4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

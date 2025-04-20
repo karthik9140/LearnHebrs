@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Herbal Garden</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Splash Screen Styles */
+    .splash-logo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #c4e5c6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 0;
+      animation: fadeInLogo 1s ease-out 1s forwards, fadeOutLogo 2s ease-out 4s forwards;
+    }
+
+    .splash-logo img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      opacity: 0;
+      animation: logoFadeIn 1.5s ease-out 2s forwards;
+    }
+
+    @keyframes fadeInLogo {
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeOutLogo {
+      100% { opacity: 0; visibility: hidden; }
+    }
+
+    @keyframes logoFadeIn {
+      0% { opacity: 0; transform: scale(1.2); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div class="splash-logo" id="splash">
+    <img src="/static/images/logo.jpg" alt="LearnHerbs Logo">
+  </div>
+
+  <script>
+    // Hide splash after delay
+    setTimeout(() => {
+      document.getElementById('splash').style.display = 'none';
+    }, 6000); // Adjust timing if needed
+  </script>
+
+  <!-- 🌿 NAVIGATION -->
+  <header>
+    <div class="nav-left">
+      <img src="/static/images/logo.jpg" alt="Herbal Garden Logo" class="logo">
+      <span>Herbal Garden</span>
+    </div>
+    <nav class="nav-right">
+      <a href="#">Home</a>
+      <a href="/chat">Assistant</a>
+      <a href="/search" class="search-label">Search</a>
+    </nav>
+  </header>
+
+  <!-- 🌱 HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Herbal Garden</h1>
+      <p>Your digital herbal guide. Search for natural remedies, learn about medicinal plants, and get AI-powered symptom insights. Explore our vast collection of herbs, each with detailed descriptions, benefits, and suggested uses for a wide variety of health conditions. Whether you’re looking for remedies to boost your immune system, improve digestion, or simply find natural ways to relax and destress, we have you covered with accurate, expert-backed information. Our platform provides a rich, interactive experience, allowing you to discover the power of nature’s healing plants.</p>
+    </div>
+    <div class="hero-image">
+      <img src="/static/images/logo.jpg" alt="Herbal Plant">
+    </div>
+  </section>
+
+  <!-- 📞 CHATBOT -->
+  <div id="chat-icon" onclick="toggleChat()">💬</div>
+
+  <div id="chat-popup">
+    <div class="chat-header">
+      <span>Herbal Assistant</span>
+      <button onclick="maximizeChat()">🗖</button>
+      <button onclick="toggleChat()">✖</button>
+    </div>
+    <div class="chat-body">
+      <div id="chat-box" class="chat-box"></div>
+      <input type="text" id="user-input" placeholder="Type your symptoms or questions..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- 🌿 CONTENT SECTIONS -->
+  <section class="content">
+    <div class="section-title">
+        <h2>Why Herbal Plants Are Important</h2>
+    </div>
+    <div class="content-text">
+        <p>Herbal plants have been used for thousands of years as natural remedies...</p>
+        <p>Herbal plants are an integral part of traditional medicine...</p>
+    </div>
+
+    <div class="section-title">
+        <h2>How Herbal Plants Differ from Tablets</h2>
+    </div>
+    <div class="content-text">
+        <p>Herbal plants differ significantly from pharmaceutical tablets...</p>
+        <p>Herbal medicine works with the body’s systems...</p>
+    </div>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

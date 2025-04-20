@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LearnHerbs Search</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Search Bar -->
+    <div class="search-container">
+      <form method="POST" action="/search">
+        <input type="text" name="search" class="search-box" placeholder="Search any herbal remedy..." required>
+        <button type="submit" class="search-button">Search</button>
+      </form>
+    </div>
+
+    <!-- Herb Cards Grid -->
+    <div class="card-container">
+      {% if results %}
+        {% for result in results %}
+          <div class="card">
+            <!-- Display image from database -->
+            {% if result['image_path'] %}
+              <img src="{{ url_for('serve_image', filename=result['image_path']) }}" alt="{{ result['name'] }}">
+            {% else %}
+              <p>No image available</p>
+            {% endif %}
+            
+            <div class="card-content">
+              <h3>{{ result['name'] }}</h3>
+              <p><strong>Medicinal Plants:</strong> {{ result['plants'] }}</p>
+              <p><strong>Natural Excipients:</strong> {{ result['excipients'] }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No results found. Please try again.</p>
+      {% endif %}
+    </div>
+  </div>
+
+</body>
+</html>

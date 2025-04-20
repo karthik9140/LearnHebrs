@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e4d2e;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(to right, #2e7d32, #66bb6a);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background: white;
+  padding: 4px;
+}
+
+.nav-left span {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-right a:hover {
+  color: #c8e6c9;
+}
+
+.search-icon {
+  height: 24px;
+  margin-left: 20px;
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  position: relative;
+  color: white;
+  height: 100vh;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/static/images/home_bg.png') no-repeat center center/cover;
+  background-attachment: fixed;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.hero-text {
+  flex: 1;
+  padding: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== PLANT GRID ===== */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #1b5e20;
+  font-weight: 600;
+}
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 60px 10%;
+  background: #ffffff;
+}
+
+.plant-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease;
+  background: #f5fdf7;
+}
+
+.plant-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+}
+
+.plant-card:hover img {
+  transform: scale(1.05);
+}
+
+.plant-info {
+  padding: 15px;
+  background: white;
+  border-top: 1px solid #c8e6c9;
+}
+
+.plant-info h3 {
+  margin-bottom: 8px;
+  color: #2e7d32;
+}
+
+.plant-info p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+.content-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.content-text p {
+  margin-bottom: 20px;
+}
+
+.graphic-container {
+  text-align: center;
+}
+
+.graphic {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #2e7d32;
+  color: white;
+  padding: 30px 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info p {
+  margin-bottom: 6px;
+}
+
+.social-icons a img {
+  width: 28px;
+  margin-left: 12px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 24px;
+}
+
+.social-icons a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0077ff;
+}
+
+/* ===== CHATBOT ===== */
+#chat-icon {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #43a047;
+  color: white;
+  padding: 18px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+#chat-icon:hover {
+  background: #2e7d32;
+}
+
+#chat-popup {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 320px;
+  background: #ffffff;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  background: #2e7d32;
+  color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chat-body {
+  padding: 15px;
+  background: #f9fefb;
+}
+
+.chat-body input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  outline: none;
+}
+
+#chat-popup.fullscreen {
+  width: 100%;
+  height: 90%;
+  top: 70px;
+  right: 0;
+  bottom: auto;
+  border-radius: 0;
+}
+
+/* Chat Messages */
+.user-msg, .bot-msg {
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user-msg {
+  background-color: #c8e6c9;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.bot-msg {
+  background-color: #eeeeee;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+.content {
+  position: relative;
+  padding: 60px 15%;
+  color: white;
+  background: url('/static/images/side_bg.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/static/images/side_bg.jpg') no-repeat center center/cover;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.content-text {
+  font-size: 1.5rem; /* Increased font size */
+  font-weight: bold; /* Made the text bolder */
+  line-height: 1.8;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
